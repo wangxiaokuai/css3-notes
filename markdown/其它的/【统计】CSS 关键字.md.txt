@@ -1,0 +1,2 @@
+initial 原始值 —— IE不支持
+inherit 继承

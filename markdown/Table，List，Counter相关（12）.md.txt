@@ -1,0 +1,292 @@
+# Table,List,Counter（11）
+## Table(5)
+### border-collapse
+collapse（塌陷）
+table与cell的边框是否合并。
+The border-collapse property sets whether the table borders are collapsed into a single border or detached as in standard HTML.
+
+
+Default value: separate
+Inherited: yes
+
+
+Values:
+Value |Description
+---|:---
+separate |（table与cell的边框分离开，中间有空隙）Borders are detached (border-spacing and empty-cells properties will not be ignored). This is default
+collapse |table与cell的边框合并）Borders are collapsed into a single border when possible (border-spacing and empty-cells properties will be ignored)
+
+
+Usage:
+```
+table {
+    border-collapse: collapse;
+}
+```
+
+
+### border-spacing
+设置相邻cell之间的空隙
+* 两个值，代表横向空隙和纵向空隙
+* 一个值，代表横纵空隙
+The border-spacing property sets the distance between the borders of adjacent cells (only for the "separated borders" model).
+
+
+Default value: 3？ —— 默认值应该不是0
+Inherited: yes
+
+
+
+
+Usage:
+```
+table {
+    border-collapse: separate;
+    border-spacing: 10px 50px;
+}
+```
+### empty-cells
+表格中的空格是否隐藏border。
+The empty-cells property sets whether or not to display borders and background on empty cells in a table (only for the "separated borders" model).
+
+
+Default value: show
+Inherited: yes
+
+
+Values:
+```
+empty-cells: show|hide;
+```
+
+
+### caption-side
+The caption-side property specifies the placement of a table caption.
+
+
+Default value: top
+Inherited: yes
+
+
+Values:
+```
+caption-side: top|bottom
+```
+### table-layout —— 难理解！
+The table-layout property sets the table layout algorithm to be used for a table.
+
+
+Default value: auto
+Inherited: no
+
+
+表格中单元格排版规则（指定宽度、内容宽度）：
+1. 优先按每个单元格指定的宽度
+2. 没指定宽度的情况下，auto和fixed处理方式不一样：auto按最大内容宽度的比例分配剩下的空间，而fixed平均分配剩下的空间
+3. 内容溢出时，auto模式和fixed模式的处理方式不一样：
+
+
+#### Values（2）
+##### auto
+自适应布局，会考虑内容长度。
+Automatic table layout algorithm (this is default):
+* The column width is set by the widest unbreakable content in the cells
+* Can be slow, since it needs to read through all the content in the table, before determining the final layout
+
+
+##### fixed
+固定布局，不考虑内容长度，只根据表格和单元格的宽度进行排版。
+Fixed table layout algorithm:
+* The horizontal layout only depends on the table's width and the width of the columns, not the contents of the cells
+* Allows a browser to lay out the table faster than the automatic table layout —— The browser can begin to display the table once the first row has been received
+
+
+## List(4)
+### list-style
+The list-style shorthand property sets all the list properties in one declaration.
+The properties that can be set, are (in order): **list-style-type, list-style-position, list-style-image**.
+If one of the values above are missing, e.g. "list-style:circle inside;", the default value for the missing property will be inserted, if any.
+
+
+Default value: disc outside none
+Inherited: yes
+
+
+Usage:
+```
+ul {
+    list-style: square url("sqpurple.gif");
+}
+```
+
+
+### list-style-type
+The list-style-type specifies the type of list-item marker in a list.
+
+
+Values(21):
+常用的（4）:
+Value |Description
+---|:---
+disc |Default value. The marker is a filled circle
+square |The marker is a square
+circle |The marker is a circle
+none |No marker is shown
+
+
+没见过的（8）:
+Value |Description
+---|:---
+armenian |The marker is traditional Armenian numbering
+cjk-ideographic |The marker is plain ideographic numbers
+georgian |The marker is traditional Georgian numbering
+hebrew |The marker is traditional Hebrew numbering
+hiragana |The marker is traditional Hiragana numbering
+hiragana-iroha |The marker is traditional Hiragana iroha numbering
+katakana |The marker is traditional Katakana numbering
+katakana-iroha |The marker is traditional Katakana iroha numbering
+
+
+有序列表相关的（9）:
+Value |Description
+---|:---
+decimal |The marker is a number
+decimal-leading-zero |The marker is a number with leading zeros (01, 02, 03, etc.)
+lower-alpha |The marker is lower-alpha (a, b, c, d, e, etc.)
+lower-greek |The marker is lower-greek
+lower-latin |The marker is lower-latin (a, b, c, d, e, etc.)
+lower-roman |The marker is lower-roman (i, ii, iii, iv, v, etc.)
+upper-alpha |The marker is upper-alpha (A, B, C, D, E, etc.) 
+upper-latin |The marker is upper-latin (A, B, C, D, E, etc.)
+upper-roman |The marker is upper-roman (I, II, III, IV, V, etc.)
+
+
+### list-style-position
+The list-style-position property specifies if the list-item markers should appear inside or outside the content flow.
+
+
+Default value: outside
+Inherited: yes
+
+
+Values(2):
+Value |Description
+---|:---
+outside |Keeps the marker to the left of the text. The bullets appears outside the content flow. This is default
+inside |Indents the marker and the text. The bullets appear inside the content flow
+
+
+
+
+### list-style-image
+The list-style-image property replaces the list-item marker with an image.
+
+
+Note: Always specify the list-style-type property in addition. This property is used if the image for some reason is unavailable.
+
+
+Usage:
+```
+ul {
+    list-style-image: url('sqpurple.gif');
+}
+```
+url: The path to the image to be used as a list-item marker
+
+
+## Counter(3)
+### 创建或重置计数器（1）
+#### counter-reset
+在需要使用计数器的元素的容器中，创建（或重置）计数器。
+```
+body { counter-reset: section;} //在body中创建一个名为section的计数器（可用于H1级标题的计数）
+
+
+h1 {counter-reset: subsection;} ////在每个h1中创建一个名为subsection的计数器（可用于该H1管辖内的H2级标题的计数）
+```
+
+
+The counter-reset property creates or resets one or more counters.
+The counter-reset property is usually used together with the counter-increment property and the content property.
+
+
+Values:
+none Default value. No counters will be reset
+name The name defines which counter that should be reset
+number The id defines which counter that should be reset. The number sets the value the counter is set to on each occurrence of the selector. The default reset value is 0
+
+
+Usage:
+```
+body {
+    counter-reset: section;
+}
+
+
+h1 {
+    counter-reset: subsection;
+}
+
+
+h1:before {
+    counter-increment: section;
+    content: "Section " counter(section) ". ";
+}
+
+
+h2:before {
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) " ";
+}
+ 
+```
+
+
+### 计数器加一
+#### counter-incremen t
+在相关元素上，调用counter-increment属性并制定计数器名字，该计数器就会加一。
+
+
+```
+h1:before {
+    counter-increment: section;
+}
+
+
+h2:before {
+    counter-increment: subsection;
+}
+```
+
+
+### 将content设置为计数器
+#### (content)
+用`counter(计数器名字)`来获取计数器数值
+用伪元素配合content属性，将计数器加到相关元素前面。
+
+
+```
+h1:before {
+    content: "Section " counter(section) ". ";
+}
+
+
+h2:before {
+    content: counter(section) "." counter(subsection) " ";
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

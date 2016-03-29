@@ -1,0 +1,93 @@
+### Background and Border (1)
+
+box-decoration-break Sets the behaviour of the background and border of an element at page-break, or, for in-line elements, at line-break. 3
+
+
+
+### Text Properties (4)
+hyphens Sets how to split words to improve the layout of paragraphs      3
+line-break Specifies how/if to break lines     3
+overflow-wrap Specifies whether or not the browser may break lines within words    3
+text-combine-upright Specifies the combination of multiple characters into the space of a single character      3
+
+
+### Text Decoration (1)
+text-underline-position Specifies the position of the underline which is set using the text-decoration property 3
+
+
+
+### Font Properties (11)
+@font-feature-values Allows authors to use a common name in font-variant-alternate for feature activated differently in OpenType
+font-feature-settings Allows control over advanced typographic features in OpenType fonts 3
+font-kerning Controls the usage of the kerning information (how letters are spaced) 3
+font-language-override Controls the usage of language-specific glyphs in a typeface 3
+font-synthesis Controls which missing typefaces (bold or italic) may be synthesized by the browser 3
+font-variant-alternates Controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values 3
+font-variant-caps Controls the usage of alternate glyphs for capital letters 3
+font-variant-east-asian Controls the usage of alternate glyphs for East Asian scripts (e.g Japanese and Chinese) 3
+font-variant-ligatures Controls which ligatures and contextual forms are used in textual content of the elements it applies to 3
+font-variant-numeric Controls the usage of alternate glyphs for numbers, fractions, and ordinal markers 3
+font-variant-position Controls the usage of alternate glyphs of smaller size positioned as superscript or subscript regarding the baseline of the font 3
+
+
+### Writing Modes (3)
+text-orientation Defines the orientation of the text in a line 3
+text-combine-upright Specifies the combination of multiple characters into the space of a single character      3
+writing-mode 3
+
+
+### Basic User Interface (1)
+ime-mode Controls the state of the input method editor for text fields 3
+
+
+### Multi-column Layout (4)
+break-after Specifies the page-, column-, or region-break behavior after the generated box 3
+break-before Specifies the page-, column-, or region-break behavior before the generated box 3
+break-inside Specifies the page-, column-, or region-break behavior inside the generated box 3
+widows Sets the minimum number of lines that must be left at the top of a page when a page break occurs inside an element 2
+
+
+### Paged Media (1)
+orphans Sets the minimum number of lines that must be left at the bottom of a page when a page break occurs inside an element 2
+
+
+### Generated Content for Paged Media (1)
+marks Adds crop and/or cross marks to the document 3
+
+
+### 19. Image Values and Replaced Content (5)
+image-orientation Specifies a rotation in the right or clockwise direction that a user agent applies to an image (This property is likely going to be deprecated and its functionality moved to HTML) 3
+image-rendering Gives a hint to the browser about what aspects of an image are most important to preserve when the image is scaled 3
+image-resolution Specifies the intrinsic resolution of all raster images used in/on the element 3
+object-fit Specifies how the contents of a replaced element should be fitted to the box established by its used height and width 3
+object-position Specifies the alignment of the replaced element inside its box 3
+
+
+### 20. Masking Properties (2)
+mask 3
+mask-type 3
+
+
+### 21. Speech Properties (14)
+mark A shorthand property for setting the mark-before and mark-after properties 3
+mark-after Allows named markers to be attached to the audio stream 3
+mark-before Allows named markers to be attached to the audio stream 3
+phonemes Specifies a phonetic pronunciation for the text contained by the corresponding element 3
+rest A shorthand property for setting the rest-before and rest-after properties 3
+rest-after Specifies a rest or prosodic boundary to be observed after speaking an element's content 3
+rest-before Specifies a rest or prosodic boundary to be observed before speaking an element's content 3
+voice-balance Specifies the balance between left and right channels 3
+voice-duration Specifies how long it should take to render the selected element's content 3
+voice-pitch Specifies the average pitch (a frequency) of the speaking voice 3
+voice-pitch-range Specifies variation in average pitch 3
+voice-rate Controls the speaking rate 3
+voice-stress Indicates the strength of emphasis to be applied 3
+voice-volume Refers to the amplitude of the waveform output by the speech synthesises 3
+
+
+### 22. Marquee Properties (4)
+marquee-direction Sets the direction of the moving content 3
+marquee-play-count Sets how many times the content move 3
+marquee-speed Sets how fast the content scrolls 3
+marquee-style Sets the style of the moving content 3
+

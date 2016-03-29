@@ -1,0 +1,13 @@
+Result |Description |Entity Number
+---|:---|---
+" | double quote | &#34;
+' | single quote | &#39;
+‹ | single, left angle quote | &#8249;
+› | single, right angle quote | &#8250;
+« | double, left angle quote | &#171;
+» | double, right angle quote | &#187;
+‘ | left quote (single high-6) | &#8216;
+’ | right quote (single high-9) | &#8217;
+“ | left quote (double high-6) | &#8220;
+” | right quote (double high-9) | &#8221;
+„ | double quote (double low-9) | &#8222;

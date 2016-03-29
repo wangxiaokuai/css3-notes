@@ -1,0 +1,167 @@
+#animation相关的（10）
+### @keyframes
+定义关键帧和动画
+The @keyframes rule specifies the animation code.
+The animation is created by gradually changing from one set of CSS styles to another.
+During the animation, you can change the set of CSS styles many times.
+Specify when the style change will happen in percent, or with the keywords "from" and "to", which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete.
+Tip: For best browser support, you should always define both the 0% and the 100% selectors.
+Note: Use the animation properties to control the appearance of the animation, and also to bind the animation to selectors.用animation属性，将动画绑定到选择器。
+
+#### Values（3）:
+```
+@keyframes animationname {keyframes-selector {css-styles;}}
+```
+##### animationname
+Required. Defines the name of the animation.
+##### keyframes-selector
+Percentage of the animation duration.Note: You can have many keyframes-selectors in one animation.
+
+* 0-100%  
+* from (same as 0%)
+* to (same as 100%)
+##### css-styles
+Required. One or more legal CSS style properties
+
+
+### animation
+* 为元素添加自动播放的动画——播放完元素会回归初始位置。
+* 并控制动画的播放
+* 动画由@keyframes定义，谢谢~
+
+
+Usage:
+```
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation: mymove 5s infinite;
+}
+
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+}
+```
+
+
+The animation property is a shorthand property for eight of the animation properties（8）:
+* animation-name
+* animation-duration **（required）**
+* animation-timing-function
+* animation-delay
+* animation-iteration-count
+* animation-direction
+* animation-fill-mode
+* animation-play-state
+Note: Always specify the animation-duration property, otherwise the duration is 0, and will never be played.
+
+
+Default value: none 0 ease 0 1 normal none running
+Inherited: no
+
+
+#### 跟transition的区别
+播放的触发条件不一样
+
+
+### animation-name
+The animation-name property specifies a name for the @keyframes animation.
+
+
+### animation-duration
+The animation-duration property defines how many seconds or milliseconds an animation takes to complete one cycle.
+
+
+### animation-timing-function
+The animation-timing-function specifies the speed curve of an animation.
+The speed curve defines the TIME an animation uses to change from one set of CSS styles to another.
+The speed curve is used to make the changes smoothly.
+Values:
+（参见transition属性）
+
+
+### animation-delay
+第一次播放动画之前的延时
+The animation-delay property specifies a delay for the start of an animation.
+The animation-delay value is defined in seconds (s) or milliseconds (ms).
+
+
+### animation-iteration-count
+动画播放次数。
+The animation-iteration-count property specifies the number of times an animation should be played.
+
+
+Default value: 1
+
+
+Values:
+Value |Description
+---|:---
+number |A number that defines how many times an animation should be played. Default value is 1 Play it »
+infinite |Specifies that the animation should be played infinite times (for ever)
+
+
+
+
+### animation-direction
+关键帧动画的播放方向——时间轴上的方向
+The animation-direction property defines whether an animation should play in reverse direction or in alternate cycles.
+
+
+Default value: normal
+Inherited: no
+
+
+Values:
+Value |Description
+---|:---
+normal |顺时间播放。Default value. The animation should be played as normal
+reverse |反过来播放。The animation should play in reverse direction
+alternate |顺一次，反一次。The animation will be played as normal every odd time (1,3,5,etc..) and in reverse direction every even time (2,4,6,etc...)
+alternate-reverse |反一次，顺一次。The animation will be played in reverse direction every odd time (1,3,5,etc..) and in a normal direction every even time (2,4,6,etc...)
+Note: The "reverse" and "alternate-reverse" values are not supported in Safari.
+
+
+
+
+### animation-fill-mode
+The animation-fill-mode property specifies a style for the element when the animation is not playing (when it is finished, or when it has a delay).
+
+
+By default, CSS animations do not affect the element until the first keyframe is "played", and then stops once the last keyframe has completed. The animation-fill-mode property can override this behavior.
+Default value: none
+Inherited: no
+
+
+Values:
+Value |Description
+---|:---
+none |元素将回到播放动画前的状态。Default value. The animation will not apply any styles to the target element before or after it is executing
+forwards |元素将留在播放动画最后一帧。After the animation ends (determined by animation-iteration-count), the animation will apply the property values for the time the animation ended
+backwards |（看不明白。。）The animation will apply the property values defined in the keyframe that will start the first iteration of the animation, during the period defined by animation-delay. These are either the values of the from keyframe (when animation-direction is "normal" or "alternate") or those of the to keyframe (when animation-direction is "reverse" or "alternate-reverse")
+both |（更不明白。。）The animation will follow the rules for both forwards and backwards. That is, it will extend the animation properties in both directions
+
+
+### animation-play-state
+动画的播放状态——可以用脚本控制。
+The animation-play-state property specifies whether the animation is running or paused.
+Note: Use this property in a JavaScript to pause an animation in the middle of a cycle.
+
+
+Default value: running
+Inherited: no
+
+
+Values:
+```
+animation-play-state: paused|running;
+```
+
+
+
+
+

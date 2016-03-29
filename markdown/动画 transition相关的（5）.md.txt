@@ -1,0 +1,116 @@
+## transition相关的（5）
+
+### transition
+定义鼠标动画（onHover）的“过渡” ——注意：动画本来就存在，缺的是对“过渡”的定义！
+The transition property is a shorthand property for the four transition properties:
+**transition-property, transition-duration, transition-timing-function, and transition-delay.**
+Note: Always specify the transition-duration property, otherwise the duration is 0s, and the transition will have no effect.（没有过渡但有效果~）
+
+
+     Default value: all 0s ease 0s
+     Inherited: no
+
+
+### transition-property
+默认所有属性都会有过渡动画，所以一般不需要指定。
+The transition-property property specifies the name of the CSS property the transition effect is for (the transition effect will start when the specified CSS property changes).
+Tip: A transition effect could typically occur when a user hover over an element.
+
+
+Note: Always specify the transition-duration property, otherwise the duration is 0, and the transition will have no effect.—— 谁说的？默认立即执行！
+
+
+Default value: all
+Inherited: no
+
+
+Values:
+Value |Description
+---|:---
+none | No property will get a transition effect
+all | Default value. All properties will get a transition effect
+property | Defines a comma separated list of CSS property names the transition effect is for
+
+
+### transition-duration
+The transition-duration property specifies how many seconds (s) or milliseconds (ms) a transition effect takes to complete.
+
+
+Default value: 0s
+Inherited: no
+
+
+Values:
+* Specifies how many seconds or milliseconds a transition effect takes to complete. 
+* Default value is 0s, meaning there will be no effect
+
+
+### transition-delay
+设置动画开始的延时、动画恢复得延时。
+The transition-delay property specifies when the transition effect will start.
+The transition-delay value is defined in seconds (s) or milliseconds (ms).
+
+
+Default value: 0s
+Inherited: no
+
+
+### transition-timing-function
+设置动画播放的速度曲线。
+The transition-timing-function property specifies the speed curve of the transition effect.
+This property allows a transition effect to change speed over its duration.
+
+
+     Default value: ease
+     Inherited: no
+
+
+#### Values（9）
+线性速度（1）
+Value |Description
+---|:---
+linear |Specifies a transition effect with the same speed from start to end (equivalent to cubic-bezier(0,0,1,1))
+
+
+ease相关的—— 渐入渐出（4）:
+Value |Description
+---|:---
+ease |Default value. Specifies a transition effect with a slow start, then fast, then end slowly (equivalent to cubic-bezier(0.25,0.1,0.25,1))
+ease-in |Specifies a transition effect with a slow start (equivalent to cubic-bezier(0.42,0,1,1))
+ease-out |Specifies a transition effect with a slow end (equivalent to cubic-bezier(0,0,0.58,1))
+ease-in-out |Specifies a transition effect with a slow start and end (equivalent to cubic-bezier(0.42,0,0.58,1))
+
+
+更通用的速度曲线（1） 
+Value |Description
+---|:---
+cubic-bezier(n,n,n,n) |Define your own values in the cubic-bezier function. Possible values are numeric values  from 0 to 1
+
+
+step相关的 —— 没有实例。。（3）
+Value |Description
+---|:---
+steps(int,start或end) |Specifies a stepping function, with two parameters. The first parameter specifies the number of intervals in the function. It must be a positive integer (greater than 0). The second parameter, which is optional, is either the value "start" or "end", and specifies the point at which the change of values occur within the interval. If the second parameter is omitted, it is given the value "end"
+step-start |Equivalent to steps(1, start)
+step-end |Equivalent to steps(1, end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

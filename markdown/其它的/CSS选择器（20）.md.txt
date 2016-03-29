@@ -1,0 +1,81 @@
+## 选择器的组合
+Notes:
+span.highlight 代表有.highlight的span标签
+span .highlight 代表span的子元素中，有highlight这个类的任意标签
+
+
+
+
+## 三大选择器（3）
+* 选择一个ID
+* 选择一类元素
+* 选择一种标签
+
+
+## 根据元素的属性选择（2）
+.select[alt]
+.select[alt="image_in_blog"]
+
+
+## 跟鼠标状态相关的选择器（5）
+a:link 未访问链接
+a:hover
+a:focus
+a:visited
+a:active
+
+
+## 选择局部范围中的元素（2）
+.blog p      对.blog后代中的p套用样式
+.blog>p    对.blog直接子元素中的p套用样式 
+
+
+
+
+
+## 根据元素位置选择（4）
+.select:first-child     第一个子元素
+
+.select:last-child     子元素中最后一个
+
+
+.select:nth-child(1)     子元素终第一个（不限标签、不限class、、）
+.select:last-nth-child(1) 子元素中最后一个
+
+
+不太有用的
+.select:empty 对.select元素中、没有子元素的套用样式
+
+
+还有很多，比如跟复选框状态相关的选择器！！
+
+
+
+
+## 假装选择元素前一个或后一个元素（2）
+.select::after
+.select::before
+
+
+## 跟媒体查询相关的（2）
+
+
+@media screen
+
+
+@media screen and (max-width: 960px)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
